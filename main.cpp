@@ -42,7 +42,7 @@ int main()
 	//task 8
 
 	list<string>padlo{ "Pablo","Bogdan","Vlad" };
-	sort(begin(padlo),end(padlo));
+	padlo.sort();
 	printCont(padlo);
 
 }
