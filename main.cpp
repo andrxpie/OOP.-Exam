@@ -1,8 +1,10 @@
 #include "std.h"
 
+int sum(int num1, int num2) { return num1 + num2; }
+
 int main()
 {
-	cout << " Hello\n";
+	cout << " 4 + 6 = " << sum(4, 6) << "\n";
 
 	return 0;
 	
