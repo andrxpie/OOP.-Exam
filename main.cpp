@@ -11,5 +11,5 @@ int main()
 	
 	// тут був женя)))
 	// тут був макс
-	// WE ARE GAYYYYYYYYYYssssssssss
+	// MAX IS GAYYYYYYYYYY
 }
