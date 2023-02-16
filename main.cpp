@@ -2,7 +2,7 @@
 
 int main()
 {
-	cout << " Hello world\n";
+	cout << " Max is gay\n";
 
 	return 0;
 }
