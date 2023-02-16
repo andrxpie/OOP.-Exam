@@ -1,16 +1,41 @@
 #include "std.h"
 
-int sum(int num1, int num2) { return num1 + num2; }
-int dob(int num1, int num2) { return num1 * num2; }
 
-int main()
+template<typename T>
+void printCont(const T& d, const string& title = "")
 {
-	cout << " 4 + 6 = " << sum(4, 6) << "\n";
-	cout << " 2 * 5 = " << dob(2, 5) << endl;
-	return 0;
-	
-	// тут був женя)))
-	// тут був макс
+	cout << title << endl;
+	for (auto& tmp : d)
+	{
+		cout << "\t" << tmp;
+	}
+	cout << endl;
+}
+bool cmp(const string& a, const string& b)
+{
+	if (a.size() == b.size())
+	{
+		return a > b;
+	}
+	return a.size() > b.size();
+}
+int main()
+
+
+
+{
+	//task 5
+	deque<string>tmp{ "Tolik","Anna","Max","Andre"};
+	sort(begin(tmp), end(tmp));
+
+	printCont(tmp);
+	//task 6
+	sort(rbegin(tmp), rend(tmp));
+
+	printCont(tmp);
+	//task 7
+	sort(begin(tmp), end(tmp), cmp);
+	printCont(tmp);
 }
 
 	
