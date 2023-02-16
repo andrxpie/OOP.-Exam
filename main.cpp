@@ -1,7 +1,6 @@
 #include "std.h"
 
 int sum(int num1, int num2) { return num1 + num2; }
-
 int dob(int num1, int num2) { return num1 * num2; }
 
 int main()
@@ -12,5 +11,5 @@ int main()
 	
 	// тут був женя)))
 	// тут був макс
-	// макс гей ++++++++++++++++++++
+	// MAX IS GAYYYYYYYYYY ++++++++++++++++++++
 }
