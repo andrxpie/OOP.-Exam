@@ -24,39 +24,37 @@ string toUpStr(string& element) {
 
 int main()
 {
-    //TASK 1
-    list <string> a{ "Andrii", "Egor", "Maxim", "Artem", "Oleg", "Zhenya" };
-    char tmp2;
-    cin >> tmp2;
+    list <string> list1{ "Andrew", "Yehor", "Max", "Artem", "Oleg", "Yevhenii" };
+    print(list1, " >>> list1 <<<");
 
-    auto it = find_if(begin(a), end(a), [tmp2](const string& str) {
+    // <---find-first-char-in-list--->
+    char findCh; cout << " find first char: "; cin >> findCh;
+    auto it = find_if(begin(list1), end(list1), [findCh](const string& str) { return str[0] == findCh; });
+    if (it != end(list1))
+        cout << " finded in word: " << distance(begin(list1), it) + 1 << "\n\n";
+    else
+        cout << " not finded\n\n";
 
-        return str[0] == tmp2;
+    // <---count-words-by-size--->
+    int num; cout << " count words.size() > "; cin >> num;
+    cout << " count: " << count_if(begin(list1), end(list1), [num](const string& str) { return str.size() > num; }) << "\n\n";
 
-        });
+    // <---max-&-min-elements--->
+    it = max_element(begin(list1), end(list1), [](const string& str1, const string& str2) { return str1.size() < str2.size(); });
+    cout << " max: " << *it << endl;
+    it = min_element(begin(list1), end(list1), [](const string& str1, const string& str2) { return str1.size() < str2.size(); });
+    cout << " min: " << *it << "\n\n";
 
-    cout << distance(begin(a), it);
-
-    //task 2
-    cout << "number of word which has more than 5 letters " << count_if(begin(a), end(a), num);
-
-    // task 3
-    auto it = max_element(begin(a), end(a), [](const string& str1, const string& str2) { return str1.size() < str2.size(); });
-    cout << *it << endl;
-    it = min_element(begin(a), end(a), [](const string& str1, const string& str2) { return str1.size() < str2.size(); });
-    cout << *it;
-
-    deque<string> b{ "Andrii", "Egor", "Maxim", "Artem", "Oleg", "Zhenya" };
-    transform(begin(b), end(b), begin(b), MakeEmrtyLetter);
-    for (auto& i : b) {
-        cout << i << endl;
-    }
+    // <---make-empty-last-letter--->
+    deque<string> deque1{ "Andrew", "Yehor", "Max", "Artem", "Oleg", "Yevhenii" };
+    transform(begin(deque1), end(deque1), begin(deque1), MakeEmrtyLetter);
+    print(deque1, " >>> empty last letter <<<");
   
     // <---remove-key-word--->
-	list<string> list1{ "Andrew", "Yevhenii", "Max", "Yehor" };
-	string deleteWord; cout << " word: "; cin >> deleteWord;
+    print(list1, " >>> list1 remove_if <<<");
+	string deleteWord; cout << " word to delete: "; cin >> deleteWord;
 	list1.remove_if([deleteWord](string i) { if (i == deleteWord) return true; return false; });
-	print(list1, " >>> list1 remove_if <<<");
+	print(list1, " >>> list1 removed <<<");
 
 	// <---CAPS-WORDS--->
 	transform(begin(list1), end(list1), begin(list1), toUpStr);
