@@ -20,11 +20,11 @@ int main()
 	list1.remove_if([deleteWord](string i) { if (i == deleteWord) return true; return false; });
 	print(list1, " >>> list1 remove_if <<<");
 
-	// <---CAPS--->
+	// <---CAPS-WORDS--->
 	transform(begin(list1), end(list1), begin(list1), toUpStr);
 	print(list1, " >>> list1 upper <<<");
 
-	// <---write-file--->
+	// <---write-list-in-file--->
 	ofstream file("saved.txt");
 	ostream_iterator<string> fileIt(file, "\n");
 	copy(begin(list1), end(list1), fileIt);
