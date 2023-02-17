@@ -61,22 +61,22 @@ int main()
     print(deque1, " >>> empty last letter <<<");
   
     // <---sort-deque--->
-	  deque<string>deque2{ "Anatolii", "Anna", "Max", "Andrew" };
-	  sort(begin(deque2), end(deque2));
-	  print(deque2, " >>> deque2 sorted <<<");
+	deque<string>deque2{ "Anatolii", "Anna", "Max", "Andrew" };
+	sort(begin(deque2), end(deque2));
+	print(deque2, " >>> deque2 sorted <<<");
   
-	  // <---rsort-deque--->
-	  sort(rbegin(deque2), rend(deque2));
-	  print(deque2);
+    // <---rsort-deque--->
+	sort(rbegin(deque2), rend(deque2));
+	print(deque2, " >>> deque2 rsort <<<");
 	  
-	  // <---sort-by-size--->
-	  sort(begin(deque2), end(deque2), sortCopy);
-	  print(deque2, " >>> deque2 sorted by str.size() <<<");
+	// <---sort-by-size--->
+	sort(begin(deque2), end(deque2), sortCopy);
+	print(deque2, " >>> deque2 sorted by str.size() <<<");
   
-	  // <---sort-list--->
-	  list<string>list5{ "Pablo", "Bogdan", "Vlad" };
-	  list5.sort();
-	  print(list5, " >>> list5 sort <<<");
+	// <---sort-list--->
+	list<string>list5{ "Pablo", "Bogdan", "Vlad" };
+	list5.sort();
+	print(list5, " >>> list5 sort <<<");
   
     // <---remove-key-word--->
     print(list1, " >>> list1 remove_if <<<");
@@ -95,18 +95,18 @@ int main()
     file.close();
 
     // <---write-data-from-file--->
-	  list<string> list2;
-	  ifstream inFile ("saved.txt");
-	  string tmp;
-	  while (inFile >> tmp) {
-	  	list2.push_back(tmp);
-	  } inFile.close();
-	  print(list2, " >>> loaded data from list");
+	list<string> list2;
+	ifstream inFile ("saved.txt");
+	string tmp;
+	while (inFile >> tmp) {
+	    list2.push_back(tmp);
+	} inFile.close();
+	print(list2, " >>> loaded data from list");
 	  
-	  // <---delete-same-words--->
-	  list<string> list3{ "Yehor", "Andriy", "Jenya", "Jenya", "Max" };
- 	  unique(begin(list3),end(list3), areSame);
-	  print(list3, " >>> list3 unique <<<");
+	// <---delete-same-words--->
+	list<string> list3{ "Yehor", "Andriy", "Jenya", "Jenya", "Max" };
+ 	unique(begin(list3),end(list3), areSame);
+	print(list3, " >>> list3 unique <<<");
 
     return 0;
 }
