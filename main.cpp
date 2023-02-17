@@ -1,6 +1,6 @@
 #include "std.h"
 
-bool AreSame(string a, string b) {
+bool areSame(string a, string b) {
 	return a == b;
 }
 
@@ -80,9 +80,8 @@ int main()
 	print(list2, " >>> loaded data from list");
 	
 	// <---delete-same-words--->
-	list<string> list3{"Yehor", "Andriy", "Jenya", "Jenya", "Max"};
- 	unique(begin(list3),end(list3), AreSame);
-	cout << "list unique"<<endl;
+	list<string> list3{ "Yehor", "Andriy", "Jenya", "Jenya", "Max" };
+ 	unique(begin(list3),end(list3), areSame);
 	print(list3, " >>> list3 unique <<<");
 
     return 0;
