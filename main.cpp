@@ -1,5 +1,11 @@
 #include "std.h"
 
+bool sortCopy(const string& a, const string& b) {
+	if (a.size() == b.size()) {
+		return a < b;
+	} return a.size() > b.size();
+}
+
 bool areSame(string a, string b) {
 	return a == b;
 }
@@ -54,6 +60,24 @@ int main()
     transform(begin(deque1), end(deque1), begin(deque1), MakeEmrtyLetter);
     print(deque1, " >>> empty last letter <<<");
   
+    // <---sort-deque--->
+	  deque<string>deque2{ "Anatolii", "Anna", "Max", "Andrew" };
+	  sort(begin(deque2), end(deque2));
+	  print(deque2, " >>> deque2 sorted <<<");
+  
+	  // <---rsort-deque--->
+	  sort(rbegin(deque2), rend(deque2));
+	  print(deque2);
+	  
+	  // <---sort-by-size--->
+	  sort(begin(deque2), end(deque2), sortCopy);
+	  print(deque2, " >>> deque2 sorted by str.size() <<<");
+  
+	  // <---sort-list--->
+	  list<string>list5{ "Pablo", "Bogdan", "Vlad" };
+	  list5.sort();
+	  print(list5, " >>> list5 sort <<<");
+  
     // <---remove-key-word--->
     print(list1, " >>> list1 remove_if <<<");
     string deleteWord; cout << " word to delete: "; cin >> deleteWord;
@@ -71,18 +95,18 @@ int main()
     file.close();
 
     // <---write-data-from-file--->
-	list<string> list2;
-	ifstream inFile ("saved.txt");
-	string tmp;
-	while (inFile >> tmp) {
-		list2.push_back(tmp);
-	} inFile.close();
-	print(list2, " >>> loaded data from list");
-	
-	// <---delete-same-words--->
-	list<string> list3{ "Yehor", "Andriy", "Jenya", "Jenya", "Max" };
- 	unique(begin(list3),end(list3), areSame);
-	print(list3, " >>> list3 unique <<<");
+	  list<string> list2;
+	  ifstream inFile ("saved.txt");
+	  string tmp;
+	  while (inFile >> tmp) {
+	  	list2.push_back(tmp);
+	  } inFile.close();
+	  print(list2, " >>> loaded data from list");
+	  
+	  // <---delete-same-words--->
+	  list<string> list3{ "Yehor", "Andriy", "Jenya", "Jenya", "Max" };
+ 	  unique(begin(list3),end(list3), areSame);
+	  print(list3, " >>> list3 unique <<<");
 
     return 0;
 }
