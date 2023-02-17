@@ -68,6 +68,7 @@ int main()
     ofstream file("saved.txt");
     ostream_iterator<string> fileIt(file, "\n");
     copy(begin(list1), end(list1), fileIt);
+    file.close();
 
     // <---write-data-from-file--->
 	list<string> list2;
@@ -75,7 +76,7 @@ int main()
 	string tmp;
 	while (inFile >> tmp) {
 		list2.push_back(tmp);
-	}
+	} inFile.close();
 	print(list2, " >>> loaded data from list");
 	
 	// <---delete-same-words--->
