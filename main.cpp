@@ -1,5 +1,9 @@
 #include "std.h"
 
+bool AreSame(string a, string b) {
+	return a == b;
+}
+
 bool num(const string& str) {
     return str.size() > 5;
 }
@@ -64,6 +68,27 @@ int main()
     ofstream file("saved.txt");
     ostream_iterator<string> fileIt(file, "\n");
     copy(begin(list1), end(list1), fileIt);
+
+// <---write-data-from-file--->
+	list<string> list2;
+	ifstream inFile ("saved.txt");
+	string tmp;
+	while (inFile >> tmp) {
+		list2.push_back(tmp);
+	}
+	print(list2, " >>> loaded data from list");
+	
+	list<string> list3{"Yehor", "Andriy", "Jenya", "Jenya", "Max"};
+	// <---merge--->
+	//list<string> list4(list2.size() + list3.size());
+	//merge(begin(list2),end(list2),begin(list3),end(list3), list.begin());
+	//cout << "Two lists" << endl;
+	//print(list4);
+	
+	// <---delete-same-words--->
+ 	unique(begin(list3),end(list3), AreSame);
+	cout << "list unique"<<endl;
+	print(list3);
 
     return 0;
 }
