@@ -15,6 +15,7 @@ string toUpStr(string& element) {
 
 int main()
 {
+        // <---remove-key-word--->
 	list<string> list1{ "Andrew", "Yevhenii", "Max", "Yehor" };
 	string deleteWord; cout << " word: "; cin >> deleteWord;
 	list1.remove_if([deleteWord](string i) { if (i == deleteWord) return true; return false; });
