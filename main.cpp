@@ -108,5 +108,11 @@ int main()
  	unique(begin(list3), end(list3), areSame);
 	print(list3, " >>> list3 unique <<<");
 
+    // <---merge---> - Andrew
+    list1.sort(); 
+    list3.sort();
+    list1.merge(list3);
+    print(list1, " >>> list1 merged <<<");
+
     return 0;
 }
