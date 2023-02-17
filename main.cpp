@@ -69,7 +69,7 @@ int main()
     ostream_iterator<string> fileIt(file, "\n");
     copy(begin(list1), end(list1), fileIt);
 
-// <---write-data-from-file--->
+    // <---write-data-from-file--->
 	list<string> list2;
 	ifstream inFile ("saved.txt");
 	string tmp;
@@ -78,17 +78,11 @@ int main()
 	}
 	print(list2, " >>> loaded data from list");
 	
-	list<string> list3{"Yehor", "Andriy", "Jenya", "Jenya", "Max"};
-	// <---merge--->
-	//list<string> list4(list2.size() + list3.size());
-	//merge(begin(list2),end(list2),begin(list3),end(list3), list.begin());
-	//cout << "Two lists" << endl;
-	//print(list4);
-	
 	// <---delete-same-words--->
+	list<string> list3{"Yehor", "Andriy", "Jenya", "Jenya", "Max"};
  	unique(begin(list3),end(list3), AreSame);
 	cout << "list unique"<<endl;
-	print(list3);
+	print(list3, " >>> list3 unique <<<");
 
     return 0;
 }
