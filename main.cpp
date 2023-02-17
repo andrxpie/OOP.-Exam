@@ -1,6 +1,6 @@
 #include "std.h"
-template<typename T>
 
+template<typename T>
 void print(const T& str)
 {
 	for (auto& i : str)
