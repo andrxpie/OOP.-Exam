@@ -1,14 +1,13 @@
 #include "std.h"
 
-bool num(const string& str)
-{
+bool num(const string& str) {
     return str.size() > 5;
 }
 
-string MakeEmrtyLetter(string a)
-{
+string MakeEmrtyLetter(string a) {
     a[a.size() - 1] = ' ';
     return a;
+}
 
 template<typename T>
 void print(const T& element, const string& text) {
@@ -21,7 +20,6 @@ void print(const T& element, const string& text) {
 string toUpStr(string& element) {
 	transform(begin(element), end(element), begin(element), toupper);
 	return element;
-
 }
 
 int main()
@@ -42,32 +40,19 @@ int main()
     //task 2
     cout << "number of word which has more than 5 letters " << count_if(begin(a), end(a), num);
 
-
-
     // task 3
-    auto it = max_element(begin(a), end(a), [](const string& str1, const string& str2) {
-        return str1.size() < str2.size();
-        });
-
+    auto it = max_element(begin(a), end(a), [](const string& str1, const string& str2) { return str1.size() < str2.size(); });
     cout << *it << endl;
-
-    it = min_element(begin(a), end(a), [](const string& str1, const string& str2) {
-        return str1.size() < str2.size();
-        });
-
-
+    it = min_element(begin(a), end(a), [](const string& str1, const string& str2) { return str1.size() < str2.size(); });
     cout << *it;
 
     deque<string> b{ "Andrii", "Egor", "Maxim", "Artem", "Oleg", "Zhenya" };
-
     transform(begin(b), end(b), begin(b), MakeEmrtyLetter);
-
-    for (auto& i : b)
-    {
+    for (auto& i : b) {
         cout << i << endl;
     }
   
-  // <---remove-key-word--->
+    // <---remove-key-word--->
 	list<string> list1{ "Andrew", "Yevhenii", "Max", "Yehor" };
 	string deleteWord; cout << " word: "; cin >> deleteWord;
 	list1.remove_if([deleteWord](string i) { if (i == deleteWord) return true; return false; });
