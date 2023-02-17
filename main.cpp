@@ -1,98 +1,28 @@
 #include "std.h"
 
-
-template<typename T>
-void printCont(const T& d, const string& title = "")
-{
-	cout << title << endl;
-	for (auto& e : d)
-	{
-		cout << "\t" << e;
-	}
-	cout << endl;
-}
-
-
-bool cmp(const string& a, const string& b)
-{
-	if (a.size() == b.size())
-	{
+bool sortCopy(const string& a, const string& b) {
+	if (a.size() == b.size()) {
 		return a < b;
-	}
-	return a.size() > b.size();
+	} return a.size() > b.size();
 }
+
 int main()
-
-
-
 {
-	//task 5
-	deque<string>bob{ "Tolik","Anna","Max","Andre"};
-	sort(begin(bob), end(bob));
+	// <---sort-deque--->
+	deque<string>deque2{ "Anatolii", "Anna", "Max", "Andrew" };
+	sort(begin(deque2), end(deque2));
+	print(deque2, " >>> deque2 sorted <<<");
 
-	printCont(bob);
-	//task 6
-	sort(rbegin(bob), rend(bob));
-
-	printCont(bob);
-	//task 7
-	sort(begin(bob), end(bob), cmp);
-	printCont(bob);
-
-	//task 8
-
-	list<string>padlo{ "Pablo","Bogdan","Vlad" };
-	padlo.sort();
-	printCont(padlo);
-
-}
-
+	// <---rsort-deque--->
+	sort(rbegin(deque2), rend(deque2));
+	print(deque2);
 	
+	// <---sort-by-size--->
+	sort(begin(deque2), end(deque2), sortCopy);
+	print(deque2, " >>> deque2 sorted by str.size() <<<");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// MAX IS GAY
+	// <---sort-list--->
+	list<string>list5{ "Pablo", "Bogdan", "Vlad" };
+	list5.sort();
+	print(list5, " >>> list5 sort <<<");
+}
