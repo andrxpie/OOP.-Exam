@@ -1,7 +1,4 @@
-#include <iostream>
-#include <list>
-#include <algorithm>
-#include <deque>
+#include "std.h"
 using namespace std;
 
 bool num(const string& str)
