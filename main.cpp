@@ -1,5 +1,4 @@
 #include "std.h"
-using namespace std;
 
 bool num(const string& str)
 {
