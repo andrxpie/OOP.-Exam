@@ -6,18 +6,11 @@ bool sortCopy(const string& a, const string& b) {
 	} return a.size() < b.size();
 }
 
-bool areSame(string a, string b) {
-	return a == b;
-}
+bool areSame(string a, string b) { return a == b; }
 
-bool num(const string& str) {
-    return str.size() > 5;
-}
+bool num(const string& str) { return str.size() > 5; }
 
-string MakeEmrtyLetter(string a) {
-    a[a.size() - 1] = ' ';
-    return a;
-}
+string MakeEmrtyLetter(string a) { a[a.size() - 1] = ' '; return a; }
 
 template<typename T>
 void print(const T& element, const string& text) {
